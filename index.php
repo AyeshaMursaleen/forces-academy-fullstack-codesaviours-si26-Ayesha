@@ -6,7 +6,7 @@
 <title>Forces Academy LMS</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -18,82 +18,183 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#1e3c72,#2a5298);
-min-height:100vh;
-color:white;
+background:linear-gradient(135deg,#071B46,#0B2F73,#1446A0);
+color:#fff;
 }
 
 .navbar{
-padding:20px 50px;
+padding:18px 0;
 }
 
 .navbar-brand{
 font-size:28px;
-font-weight:bold;
-color:white !important;
+font-weight:700;
+color:#fff!important;
+}
+
+.nav-link{
+color:#fff!important;
+margin:0 10px;
+transition:.3s;
+}
+
+.nav-link:hover{
+color:#F7C948!important;
+}
+
+.btn-login,
+.btn-register{
+padding:10px 24px;
+border-radius:30px;
+font-weight:600;
+text-decoration:none;
+transition:.3s;
+}
+
+.btn-login{
+border:2px solid #F7C948;
+color:#F7C948;
+margin-right:10px;
+}
+
+.btn-login:hover{
+background:#F7C948;
+color:#071B46;
+}
+
+.btn-register{
+background:#F7C948;
+color:#071B46;
+}
+
+.btn-register:hover{
+background:#fff;
 }
 
 .hero{
-min-height:90vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:40px;
-}
-
-.hero-box{
-    background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(10px);
-    border-radius: 25px;
-    padding: 50px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+padding:70px 0;
 }
 
 .hero h1{
-font-size:50px;
+font-size:55px;
 font-weight:700;
 }
 
 .hero p{
+margin:20px 0 35px;
 font-size:18px;
-margin-top:20px;
 line-height:1.8;
+color:#ddd;
 }
 
-.btn-custom{
-    padding:12px 30px;
-    border-radius:30px;
-    font-size:17px;
-    font-weight:600;
-    margin-right:15px;
-    transition:0.3s;
+.hero-btn{
+display:inline-block;
+padding:12px 28px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+margin-right:15px;
+transition:.3s;
 }
 
-.btn-custom:hover{
-    transform: translateY(-3px);
+.login-student{
+background:#F7C948;
+color:#071B46;
+}
+
+.register-student{
+border:2px solid #fff;
+color:#fff;
+}
+
+.hero-btn:hover{
+transform:translateY(-3px);
+}
+
+.hero img{
+max-width:480px;
+width:100%;
+display:block;
+margin:auto;
+filter:drop-shadow(0 20px 30px rgba(0,0,0,.25));
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+100%{transform:translateY(0);}
 }
 
 .features{
-margin-top:35px;
+padding:70px 0;
+}
+.feature-card{
+background:rgba(255,255,255,.08);
+padding:25px;
+border-radius:18px;
+text-align:center;
+height:100%;
+transition:.3s;
 }
 
-.features li{
-list-style:none;
-padding:8px 0;
-font-size:18px;
+.feature-card:hover{
+background:rgba(255,255,255,.15);
+transform:translateY(-8px);
 }
 
-.image img{
-    width:100%;
-    max-width:350px;
-    height:auto;
+.icon{
+font-size:40px;
+margin-bottom:15px;
+}
+
+.feature-card h4{
+font-weight:600;
+margin-bottom:10px;
+}
+
+.feature-card p{
+font-size:15px;
+color:#ddd;
+line-height:1.7;
 }
 
 footer{
+background:rgba(0,0,0,.2);
+padding:30px 0;
 text-align:center;
-padding:20px;
-color:white;
+margin-top:50px;
 }
+
+footer p{
+margin:5px 0;
+color:#ddd;
+}
+
+@media(max-width:991px){
+
+.hero{
+text-align:center;
+padding:50px 0;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.hero img{
+max-width:300px;
+margin-top:40px;
+}
+
+.hero-btn{
+display:block;
+width:230px;
+margin:15px auto;
+}
+
+}
+
 
 </style>
 
@@ -102,54 +203,125 @@ color:white;
 <body>
 
 <nav class="navbar navbar-expand-lg">
+
 <div class="container">
+
 <a class="navbar-brand" href="#">🎓 Forces Academy LMS</a>
+
+<button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+
+<ul class="navbar-nav mx-auto">
+
+<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+
+<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+
+<li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+
+<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+
+</ul>
+
+<a href="login.php" class="btn-login">Login</a>
+<a href="register.php" class="btn-register">Register</a>
+
 </div>
+
+</div>
+
 </nav>
 
 <section class="hero">
 
-<div class="hero-box">
+<div class="container">
 
 <div class="row align-items-center">
 
 <div class="col-lg-6">
 
-<h1>Welcome to Forces Academy LMS</h1>
+<h1>Welcome to<br>Forces Academy LMS</h1>
 
 <p>
 Welcome to the Forces Academy Learning Management System.
-Register as a new student or log in securely to access your
-account and begin your learning journey.
+Register as a new student or log in to access your dashboard and continue your learning journey.
 </p>
 
-<a href="login.php" class="btn btn-light btn-custom">
-    Student Login
-</a>
+<a href="login.php" class="hero-btn login-student">👤 Student Login</a>
 
-<a href="register.php" class="btn btn-outline-light btn-custom">
-    Student Register
-</a>
-
-<ul class="features">
-
-<li>📚 Modern Learning Platform</li>
-
-<li>👨‍🎓 Easy Student Management</li>
-
-<li>🔐 Secure Login System</li>
-
-<li>💻 Access Anytime, Anywhere</li>
-
-</ul>
-
-</ul>
+<a href="register.php" class="hero-btn register-student">📝 Student Register</a>
 
 </div>
 
-<div class="col-lg-6 text-center image">
+<div class="col-lg-6 text-center">
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="Student Study Illustration">
+</div>
 
-<img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="Student">
+</div>
+<!-- Features -->
+
+<div class="features">
+
+<div class="row g-4">
+
+<div class="col-md-6 col-lg-3">
+
+<div class="feature-card">
+
+<div class="icon">📚</div>
+
+<h4>Online Learning</h4>
+
+<p>Learn anytime with an easy and modern online learning platform.</p>
+
+</div>
+
+</div>
+
+<div class="col-md-6 col-lg-3">
+
+<div class="feature-card">
+
+<div class="icon">👨‍🎓</div>
+
+<h4>Student Portal</h4>
+
+<p>Manage your profile, attendance and academic information easily.</p>
+
+</div>
+
+</div>
+
+<div class="col-md-6 col-lg-3">
+
+<div class="feature-card">
+
+<div class="icon">🔒</div>
+
+<h4>Secure Login</h4>
+
+<p>Your personal information is protected with a secure login system.</p>
+
+</div>
+
+</div>
+
+<div class="col-md-6 col-lg-3">
+
+<div class="feature-card">
+
+<div class="icon">💻</div>
+
+<h4>Any Device</h4>
+
+<p>Access the LMS from desktop, laptop, tablet or mobile anytime.</p>
+
+</div>
+
+</div>
 
 </div>
 
@@ -161,9 +333,20 @@ account and begin your learning journey.
 
 <footer>
 
-© 2026 Forces Academy LMS | All Rights Reserved.
+<div class="container">
+
+<h5>🎓 Forces Academy LMS</h5>
+
+<p>Empowering Students Through Modern Learning</p>
+
+<p>© 2026 Forces Academy LMS. All Rights Reserved.</p>
+
+</div>
 
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
