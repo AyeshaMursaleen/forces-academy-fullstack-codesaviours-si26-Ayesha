@@ -1,136 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forces Academy LMS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forces Academy LMS</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:'Poppins',sans-serif;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
-        body{
-            background:linear-gradient(135deg,#0F172A,#1D4ED8);
-            height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            color:white;
-        }
+body{
+background:linear-gradient(135deg,#1e3c72,#2a5298);
+min-height:100vh;
+color:white;
+}
 
-        .hero{
-            background:rgba(255,255,255,0.12);
-            backdrop-filter:blur(10px);
-            padding:50px;
-            border-radius:20px;
-            text-align:center;
-            width:90%;
-            max-width:700px;
-            box-shadow:0 10px 30px rgba(0,0,0,.3);
-        }
+.navbar{
+padding:20px 50px;
+}
 
-        .logo{
-            width:100px;
-            height:100px;
-            background:#fff;
-            color:#1D4ED8;
-            border-radius:50%;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            font-size:40px;
-            font-weight:bold;
-            margin:auto;
-            margin-bottom:20px;
-        }
+.navbar-brand{
+font-size:28px;
+font-weight:bold;
+color:white !important;
+}
 
-        h1{
-            font-weight:700;
-            margin-bottom:15px;
-        }
+.hero{
+min-height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:40px;
+}
 
-        p{
-            font-size:18px;
-            color:#E2E8F0;
-            margin-bottom:35px;
-        }
+.hero-box{
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 50px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
 
-        .btn-custom{
-            width:220px;
-            padding:12px;
-            font-size:18px;
-            font-weight:600;
-            border-radius:50px;
-            margin:10px;
-            transition:.3s;
-        }
+.hero h1{
+font-size:50px;
+font-weight:700;
+}
 
-        .btn-login{
-            background:white;
-            color:#1D4ED8;
-            border:none;
-        }
+.hero p{
+font-size:18px;
+margin-top:20px;
+line-height:1.8;
+}
 
-        .btn-login:hover{
-            background:#dbeafe;
-        }
+.btn-custom{
+    padding:12px 30px;
+    border-radius:30px;
+    font-size:17px;
+    font-weight:600;
+    margin-right:15px;
+    transition:0.3s;
+}
 
-        .btn-register{
-            border:2px solid white;
-            color:white;
-        }
+.btn-custom:hover{
+    transform: translateY(-3px);
+}
 
-        .btn-register:hover{
-            background:white;
-            color:#1D4ED8;
-        }
+.features{
+margin-top:35px;
+}
 
-        footer{
-            margin-top:35px;
-            color:#CBD5E1;
-            font-size:14px;
-        }
-    </style>
+.features li{
+list-style:none;
+padding:8px 0;
+font-size:18px;
+}
+
+.image img{
+    width:100%;
+    max-width:350px;
+    height:auto;
+}
+
+footer{
+text-align:center;
+padding:20px;
+color:white;
+}
+
+</style>
+
 </head>
+
 <body>
 
-<div class="hero">
+<nav class="navbar navbar-expand-lg">
+<div class="container">
+<a class="navbar-brand" href="#">🎓 Forces Academy LMS</a>
+</div>
+</nav>
 
-    <div class="logo">
-        LMS
-    </div>
+<section class="hero">
 
-    <h1>Forces Academy LMS</h1>
+<div class="hero-box">
 
-    <p>
-        Welcome to the Forces Academy Learning Management System.
-        Register as a new student or login to access your dashboard,
-        courses, assignments and results.
-    </p>
+<div class="row align-items-center">
 
-    <a href="login.php" class="btn btn-login btn-custom">
-        Student Login
-    </a>
+<div class="col-lg-6">
 
-    <a href="register.php" class="btn btn-register btn-custom">
-        Student Register
-    </a>
+<h1>Welcome to Forces Academy LMS</h1>
 
-    <footer>
-        © 2026 Forces Academy LMS. All Rights Reserved.
-    </footer>
+<p>
+Welcome to the Forces Academy Learning Management System.
+Register as a new student or log in securely to access your
+account and begin your learning journey.
+</p>
+
+<a href="login.php" class="btn btn-light btn-custom">
+    Student Login
+</a>
+
+<a href="register.php" class="btn btn-outline-light btn-custom">
+    Student Register
+</a>
+
+<ul class="features">
+
+<li>📚 Modern Learning Platform</li>
+
+<li>👨‍🎓 Easy Student Management</li>
+
+<li>🔐 Secure Login System</li>
+
+<li>💻 Access Anytime, Anywhere</li>
+
+</ul>
+
+</ul>
 
 </div>
+
+<div class="col-lg-6 text-center image">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="Student">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Forces Academy LMS | All Rights Reserved.
+
+</footer>
 
 </body>
 </html>
