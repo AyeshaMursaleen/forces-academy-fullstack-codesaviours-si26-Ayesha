@@ -232,7 +232,7 @@ Added on:
 
 <p class="mb-0">
 There are no courses in the database yet.
-Please add some sample courses in phpMyAdmin.
+Please add some  courses in phpMyAdmin.
 </p>
 
 </div>
