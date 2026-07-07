@@ -22,6 +22,9 @@ background:linear-gradient(135deg,#071B46,#0B2F73,#1446A0);
 color:#fff;
 }
 
+html{
+scroll-behavior:smooth;
+}
 .navbar{
 padding:18px 0;
 }
@@ -217,13 +220,9 @@ margin:15px auto;
 <ul class="navbar-nav mx-auto">
 
 <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-
-<li class="nav-item"><a class="nav-link" href="#">About</a></li>
-
-<li class="nav-item"><a class="nav-link" href="#">Features</a></li>
-
-<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-
+<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 </ul>
 
 <a href="login.php" class="btn-login">Login</a>
@@ -331,9 +330,88 @@ Register as a new student or log in to access your dashboard and continue your l
 
 </section>
 
-<footer>
+<section id="about" class="py-5">
+
+<div class="container text-center">
+
+<h2>About Us</h2>
+
+<p class="mt-3">
+Forces Academy LMS is an online learning management system that helps
+students access courses, assignments, results, and notices anytime.
+Our goal is to provide a simple, secure, and modern learning experience.
+</p>
+</div>
+</section>
+<!-- Features Section Start -->
+
+<section id="features" class="py-5">
 
 <div class="container">
+
+<h2 class="text-center mb-5">Features</h2>
+
+<div class="row text-center">
+
+<div class="col-md-4">
+
+<h3>📚</h3>
+
+<h5>Online Courses</h5>
+
+<p>Access your study material anytime.</p>
+
+</div>
+
+<div class="col-md-4">
+
+<h3>📝</h3>
+
+<h5>Assignments</h5>
+
+<p>Submit assignments easily through LMS.</p>
+
+</div>
+
+<div class="col-md-4">
+
+<h3>📊</h3>
+
+<h5>Results</h5>
+
+<p>Check your academic results online.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Features Section End -->
+ <!-- Contact Section Start -->
+
+<section id="contact" class="py-5">
+
+<div class="container text-center">
+
+<h2>Contact Us</h2>
+
+<p><strong>Email:</strong> info@forcesacademy.com</p>
+
+<p><strong>Phone:</strong> +92 300 1234567</p>
+
+<p><strong>Address:</strong> Lahore, Pakistan</p>
+
+</div>
+
+</section>
+
+<!-- Contact Section End -->
+<footer>
+<div class="container">
+
 
 <h5>🎓 Forces Academy LMS</h5>
 

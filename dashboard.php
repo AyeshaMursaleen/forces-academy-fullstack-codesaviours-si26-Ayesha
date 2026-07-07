@@ -174,15 +174,15 @@ Forces Academy LMS
 
 <h5>Student Panel</h5>
 
-<a href="#"><i class="fa-solid fa-house"></i> Dashboard</a>
+<a href="dashboard.php"><i class="fa-solid fa-house"></i> Dashboard</a>
 
-<a href="#"><i class="fa-solid fa-book-open"></i> My Courses</a>
+<a href="courses.php"><i class="fa-solid fa-book-open"></i> My Courses</a>
 
-<a href="#"><i class="fa-solid fa-file-lines"></i> Assignments</a>
+<a href="assignments.php"><i class="fa-solid fa-file-lines"></i> Assignments</a>
 
-<a href="#"><i class="fa-solid fa-chart-column"></i> Results</a>
+<a href="results.php"><i class="fa-solid fa-chart-column"></i> My Results</a>
 
-<a href="#"><i class="fa-solid fa-bell"></i> Notices</a>
+<a href="notices.php"><i class="fa-solid fa-bell"></i> Notices</a>
 
 <a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
 
