@@ -6,7 +6,16 @@ if (!isset($_SESSION['student_id'])) {
     exit();
 }
 
+include 'config/db.php';
+
 $student_name = $_SESSION['student_name'];
+
+// Count total courses
+$course_query = "SELECT COUNT(*) AS total_courses FROM courses";
+$course_result = mysqli_query($conn, $course_query);
+$course_data = mysqli_fetch_assoc($course_result);
+
+$total_courses = $course_data['total_courses'];
 ?>
 
 <!DOCTYPE html>
@@ -207,8 +216,7 @@ Forces Academy LMS
 <i class="fa-solid fa-book-open-reader"></i>
 
 <h4>My Courses</h4>
-
-<p>You are enrolled in 0 courses.</p>
+<p>You are enrolled in <?php echo $total_courses; ?> courses.</p>
 
 </div>
 
