@@ -16,6 +16,16 @@ $course_result = mysqli_query($conn, $course_query);
 $course_data = mysqli_fetch_assoc($course_result);
 
 $total_courses = $course_data['total_courses'];
+// Fetch latest notice
+$notice_query = "SELECT * FROM notices ORDER BY created_at DESC LIMIT 3";
+$notice_result = mysqli_query($conn, $notice_query);
+
+if(mysqli_num_rows($notice_result) > 0){
+    $notice = mysqli_fetch_assoc($notice_result);
+    $latest_notice = $notice['title'];
+}else{
+    $latest_notice = "No notices available.";
+}
 ?>
 
 <!DOCTYPE html>
@@ -203,7 +213,7 @@ Forces Academy LMS
 
 <h2>Welcome, <?php echo htmlspecialchars($student_name); ?> 👋</h2>
 
-<p>We're happy to see you again. Continue your learning journey with Forces Academy LMS.</p>
+<p>We're happy to see you . Continue your learning journey with Forces Academy LMS.</p>
 
 </div>
 
@@ -258,8 +268,20 @@ Forces Academy LMS
 
 <h4>Latest Notices</h4>
 
-<p>No new notices available.</p>
-
+<?php
+if(mysqli_num_rows($notice_result) > 0){
+    while($notice = mysqli_fetch_assoc($notice_result)){
+?>
+    <p>
+        <i class="fa-solid fa-circle text-primary" style="font-size:8px;"></i>
+        <?php echo htmlspecialchars($notice['title']); ?>
+    </p>
+<?php
+    }
+}else{
+    echo "<p>No notices available.</p>";
+}
+?>
 </div>
 
 </div>
