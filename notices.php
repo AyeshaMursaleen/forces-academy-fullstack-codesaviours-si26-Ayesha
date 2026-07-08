@@ -71,15 +71,33 @@ $result = mysqli_query($conn, $sql);
         /* Content */
 
         .content{
-            margin-left:250px;
-            padding:40px;
-        }
+    margin-left:250px;
+    padding:40px;
+    max-width:1100px;
+}
+.sidebar{
+    background:linear-gradient(180deg,#212529,#111827);
+}
+.card{
+    overflow:hidden;
+    position:relative;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:#0d6efd;
+}
 
         h2{
-            color:#0d6efd;
-            font-weight:bold;
-            margin-bottom:30px;
-        }
+    color:#0d6efd;
+    font-weight:bold;
+    text-shadow:1px 1px 2px rgba(0,0,0,.15);
+}
 
         /* Cards */
 
@@ -117,37 +135,6 @@ $result = mysqli_query($conn, $sql);
 
 <body>
 
-<!-- Sidebar -->
-
-<div class="sidebar">
-
-    <h3>Student Panel</h3>
-
-    <a href="dashboard.php">
-        <i class="fa-solid fa-house"></i> Dashboard
-    </a>
-
-    <a href="courses.php">
-        <i class="fa-solid fa-book"></i> My Courses
-    </a>
-
-    <a href="assignments.php">
-        <i class="fa-solid fa-file"></i> Assignments
-    </a>
-
-    <a href="results.php">
-        <i class="fa-solid fa-chart-column"></i> My Results
-    </a>
-
-    <a href="notices.php" class="active">
-        <i class="fa-solid fa-bullhorn"></i> Notices
-    </a>
-
-    <a href="logout.php">
-        <i class="fa-solid fa-right-from-bracket"></i> Logout
-    </a>
-
-</div>
 
 <!-- Content -->
 
@@ -180,18 +167,19 @@ $result = mysqli_query($conn, $sql);
             </p>
 
             <p>
-                <span class="badge bg-primary">
-                    <i class="fa-solid fa-user"></i> Posted By
-                </span>
+                <span class="badge bg-primary me-2">
+    <i class="fa-solid fa-user"></i> Posted By
+</span>
 
-                <?php echo htmlspecialchars($row['posted_by']); ?>
+<strong><?php echo $row['posted_by']; ?></strong>
+<span class="badge bg-light text-dark border">
+    <i class="fa-solid fa-calendar-days"></i>
+    <?php echo date("d M Y", strtotime($row['created_at'])); ?>
+</span>
+               
             </p>
 
-            <span class="badge bg-light text-dark border">
-                <i class="fa-solid fa-calendar-days"></i>
-                <?php echo date("d M Y", strtotime($row['created_at'])); ?>
-            </span>
-
+            
         </div>
 
     </div>
