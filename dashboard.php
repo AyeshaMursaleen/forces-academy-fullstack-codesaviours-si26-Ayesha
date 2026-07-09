@@ -16,16 +16,15 @@ $course_result = mysqli_query($conn, $course_query);
 $course_data = mysqli_fetch_assoc($course_result);
 
 $total_courses = $course_data['total_courses'];
-// Fetch latest notice
-$notice_query = "SELECT * FROM notices ORDER BY created_at DESC LIMIT 3";
-$notice_result = mysqli_query($conn, $notice_query);
 
-if(mysqli_num_rows($notice_result) > 0){
-    $notice = mysqli_fetch_assoc($notice_result);
-    $latest_notice = $notice['title'];
-}else{
-    $latest_notice = "No notices available.";
-}
+// Count notices for this week
+$notice_query = "SELECT COUNT(*) AS total_notices
+                 FROM notices
+                 WHERE created_at >= DATE_SUB(NOW(), INTERVAL 7 DAY)";
+
+$notice_result = mysqli_query($conn, $notice_query);
+$notice_data = mysqli_fetch_assoc($notice_result);
+$total_notices = $notice_data['total_notices'];
 ?>
 
 <!DOCTYPE html>
@@ -262,26 +261,18 @@ Forces Academy LMS
 
 <div class="col-md-6">
 
-<div class="card">
+    <div class="card">
 
-<i class="fa-solid fa-bullhorn"></i>
+        <i class="fa-solid fa-bullhorn"></i>
 
-<h4>Latest Notices</h4>
+        <h4>Latest Notices</h4>
 
-<?php
-if(mysqli_num_rows($notice_result) > 0){
-    while($notice = mysqli_fetch_assoc($notice_result)){
-?>
-    <p>
-        <i class="fa-solid fa-circle text-primary" style="font-size:8px;"></i>
-        <?php echo htmlspecialchars($notice['title']); ?>
-    </p>
-<?php
-    }
-}else{
-    echo "<p>No notices available.</p>";
-}
-?>
+        <p>There are <strong><?php echo $total_notices; ?></strong> notices for this week.</p>
+
+    </div>
+
+</div>
+
 </div>
 
 </div>
