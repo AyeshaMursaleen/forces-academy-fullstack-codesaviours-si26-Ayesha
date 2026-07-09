@@ -90,15 +90,15 @@ align-items:center;
 }
 
 .login-box{
-
 width:450px;
 background:#fff;
+background:rgba(255,255,255,.95);
+backdrop-filter:blur(10px);
 padding:40px;
 border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.2);
-
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+animation:fadeIn .8s ease;
 }
-
 .login-box h2{
 
 text-align:center;
@@ -109,10 +109,16 @@ color:#1E3A8A;
 }
 
 .btn-primary{
+    background:linear-gradient(90deg,#1E3A8A,#2563EB);
+    border:none;
+    border-radius:12px;
+    font-weight:600;
+    transition:.3s;
+}
 
-background:#1E3A8A;
-border:none;
-
+.btn-primary:hover{
+    transform:translateY(-2px);
+    background:linear-gradient(90deg,#163172,#1E40AF);
 }
 
 .btn-primary:hover{
