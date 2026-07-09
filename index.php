@@ -480,10 +480,6 @@ Our goal is to provide a simple, secure, and modern learning experience.
     © 2026 Forces Academy LMS. All Rights Reserved.
 </p>
 
-<p>
-    Developed by <strong>Ayesha Mursaleen</strong>
-</p>
-
 </div>
 
 </footer>
