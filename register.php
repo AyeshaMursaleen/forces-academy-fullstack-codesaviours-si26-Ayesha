@@ -132,17 +132,18 @@ color:#1E3A8A;
 }
 
 .btn-primary{
-
-background:#1E3A8A;
-border:none;
-
+    background:linear-gradient(90deg,#1E3A8A,#2563EB);
+    border:none;
+    border-radius:12px;
+    font-weight:600;
+    transition:.3s;
 }
 
 .btn-primary:hover{
-
-background:#163172;
-
+    transform:translateY(-2px);
+    background:linear-gradient(90deg,#163172,#1E40AF);
 }
+
 
 a{
 
