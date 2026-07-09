@@ -26,7 +26,7 @@ html{
 scroll-behavior:smooth;
 }
 .navbar{
-padding:18px 0;
+padding: 14px 32px;
 }
 
 .navbar-brand{
@@ -163,17 +163,62 @@ line-height:1.7;
 }
 
 footer{
-background:rgba(0,0,0,.2);
-padding:30px 0;
-text-align:center;
-margin-top:50px;
+    background:rgba(0,0,0,.25);
+    padding:50px 0 30px;
+    margin-top:60px;
+    text-align:center;
+    border-top:3px solid #F7C948;
+}
+
+footer h4{
+    color:#fff;
+    font-weight:700;
+    margin-bottom:10px;
 }
 
 footer p{
-margin:5px 0;
-color:#ddd;
+    color:#ddd;
+    margin:8px 0;
 }
 
+.footer-links{
+    margin:20px 0;
+}
+
+.footer-links a{
+    color:#F7C948;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+/* Section Heading */
+
+.section-title{
+    font-size:42px;
+    font-weight:700;
+    color:#fff;
+    text-align:center;
+    margin-bottom:40px;
+    position:relative;
+    display:inline-block;
+}
+
+.section-title::after{
+    content:"";
+    width:80px;
+    height:4px;
+    background:#FFD54F;
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    bottom:-12px;
+    border-radius:10px;
+}
 @media(max-width:991px){
 
 .hero{
@@ -334,7 +379,9 @@ Register as a new student or log in to access your dashboard and continue your l
 
 <div class="container text-center">
 
-<h2>About Us</h2>
+<div class="text-center">
+    <h2 class="section-title">About Us</h2>
+</div>
 
 <p class="mt-3">
 Forces Academy LMS is an online learning management system that helps
@@ -349,7 +396,9 @@ Our goal is to provide a simple, secure, and modern learning experience.
 
 <div class="container">
 
-<h2 class="text-center mb-5">Features</h2>
+<div class="text-center mb-5">
+    <h2 class="section-title">Features</h2>
+</div>
 
 <div class="row text-center">
 
@@ -396,7 +445,9 @@ Our goal is to provide a simple, secure, and modern learning experience.
 
 <div class="container text-center">
 
-<h2>Contact Us</h2>
+<div class="text-center mb-5">
+    <h2 class="section-title">Contact Us</h2>
+</div>
 
 <p><strong>Email:</strong> info@forcesacademy.com</p>
 
@@ -410,21 +461,29 @@ Our goal is to provide a simple, secure, and modern learning experience.
 
 <!-- Contact Section End -->
 <footer>
-<div class="container">
 
+<div class="container text-center">
 
-<h5>🎓 Forces Academy LMS</h5>
+<hr style="border:1px solid rgba(255,255,255,0.2); margin-bottom:30px;">
+
+<h4>🎓 Forces Academy LMS</h4>
 
 <p>Empowering Students Through Modern Learning</p>
 
-<p>© 2026 Forces Academy LMS. All Rights Reserved.</p>
+<div class="footer-links">
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</div>
+
+<p class="mt-4">
+    © 2026 Forces Academy LMS. All Rights Reserved.
+</p>
+
+<p>
+    Developed by <strong>Ayesha Mursaleen</strong>
+</p>
 
 </div>
 
 </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-
-</html>
