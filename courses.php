@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 include 'config/db.php';
@@ -12,7 +13,6 @@ $student_name = $_SESSION['student_name'];
 $sql = "SELECT * FROM courses ORDER BY created_at DESC";
 $result = mysqli_query($conn, $sql);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 

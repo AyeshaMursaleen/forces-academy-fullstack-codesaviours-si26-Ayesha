@@ -18,7 +18,7 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#071B46,#0B2F73,#1446A0);
+background:#0B1220;
 color:#fff;
 }
 
@@ -26,7 +26,12 @@ html{
 scroll-behavior:smooth;
 }
 .navbar{
-padding: 14px 32px;
+padding:14px 32px;
+background:#111827;
+border-bottom:1px solid #2C3647;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .navbar-brand{
@@ -75,21 +80,24 @@ background:#fff;
 }
 
 .hero{
-padding:70px 0;
+padding:80px 0;
+background:linear-gradient(135deg,#0B1220,#111827);
 }
 
 .hero h1{
-font-size:55px;
+font-size:58px;
 font-weight:700;
+line-height:1.2;
+}
+.hero h1 span{
+    color:#F7C948;
 }
 
 .hero p{
-margin:20px 0 35px;
+color:#C9D1D9;
 font-size:18px;
 line-height:1.8;
-color:#ddd;
 }
-
 .hero-btn{
 display:inline-block;
 padding:12px 28px;
@@ -114,36 +122,59 @@ color:#fff;
 transform:translateY(-3px);
 }
 
-.hero img{
-max-width:480px;
-width:100%;
-display:block;
-margin:auto;
-filter:drop-shadow(0 20px 30px rgba(0,0,0,.25));
-animation:float 4s ease-in-out infinite;
+.hero-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
 }
 
+.hero-image::before{
+    content:"";
+    position:absolute;
+    width:380px;
+    height:380px;
+    background:rgba(247,201,72,.12);
+    border-radius:50%;
+    filter:blur(60px);
+}
+
+.hero-image img{
+    position:relative;
+    width:100%;
+    max-width:460px;
+    animation:float 4s ease-in-out infinite;
+    filter:drop-shadow(0 15px 35px rgba(0,0,0,.35));
+}
 @keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-12px);}
-100%{transform:translateY(0);}
+
+0%{
+    transform:translateY(0);
+}
+
+50%{
+    transform:translateY(-12px);
+}
+
+100%{
+    transform:translateY(0);
+}
 }
 
 .features{
 padding:70px 0;
 }
 .feature-card{
-background:rgba(255,255,255,.08);
-padding:25px;
+background:#1F2937;
+border:1px solid #374151;
+padding:30px;
 border-radius:18px;
-text-align:center;
-height:100%;
 transition:.3s;
 }
 
 .feature-card:hover{
-background:rgba(255,255,255,.15);
-transform:translateY(-8px);
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,.4);
 }
 
 .icon{
@@ -241,8 +272,8 @@ width:230px;
 margin:15px auto;
 }
 
-}
 
+}
 
 </style>
 
@@ -286,9 +317,10 @@ margin:15px auto;
 <div class="row align-items-center">
 
 <div class="col-lg-6">
-
-<h1>Welcome to<br>Forces Academy LMS</h1>
-
+<h1>
+    Welcome to <br>
+    <span>Forces Academy LMS</span>
+</h1>
 <p>
 Welcome to the Forces Academy Learning Management System.
 Register as a new student or log in to access your dashboard and continue your learning journey.
@@ -300,8 +332,10 @@ Register as a new student or log in to access your dashboard and continue your l
 
 </div>
 
-<div class="col-lg-6 text-center">
-<img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="Student Study Illustration">
+<div class="col-lg-6 d-flex justify-content-center">
+    <div class="hero-image">
+<img src="image/student.jpeg" alt="Student" width="350">
+    </div>
 </div>
 
 </div>
