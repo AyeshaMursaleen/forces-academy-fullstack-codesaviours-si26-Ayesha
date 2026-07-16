@@ -1,6 +1,28 @@
 <?php
 require_once 'config/db.php'; // Change the path if your db.php is in another folder
+if(isset($_POST['save_result'])){
 
+    $student_id = $_POST['student_id'];
+    $course_id = $_POST['course_id'];
+    $assignment_id = $_POST['assignment_id'];
+    $obtained_marks = $_POST['marks_obtained'];
+    $total_marks = $_POST['total_marks'];
+    $grade = $_POST['grade'];
+    $remarks = $_POST['remarks'];
+
+    $insert = mysqli_query($conn, "
+        INSERT INTO results
+        (student_id, course_id, assignment_id, obtained_marks, total_marks, grade, remarks)
+        VALUES
+        ('$student_id','$course_id','$assignment_id','$obtained_marks','$total_marks','$grade','$remarks')
+    ");
+
+    if($insert){
+        echo "<script>alert('Result Added Successfully'); window.location='results.php';</script>";
+    }else{
+        echo mysqli_error($conn);
+    }
+}
 // Fetch Students
 $students = mysqli_query($conn, "SELECT id, full_name FROM students");
 
@@ -9,8 +31,23 @@ $courses = mysqli_query($conn, "SELECT id, course_name FROM courses");
 
 // Fetch Assignments
 $assignments = mysqli_query($conn, "SELECT id, title FROM assignments");
+$showResults = mysqli_query($conn, "
+SELECT
+    results.id,
+    students.full_name,
+    courses.course_name,
+    assignments.title,
+    results.obtained_marks AS marks_obtained,
+    results.total_marks,
+    results.grade,
+    results.remarks
+FROM results
+JOIN students ON results.student_id = students.id
+JOIN courses ON results.course_id = courses.id
+JOIN assignments ON results.assignment_id = assignments.id
+ORDER BY results.id DESC
+");
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,11 +139,75 @@ $assignments = mysqli_query($conn, "SELECT id, title FROM assignments");
                     <textarea name="remarks" class="form-control" rows="3"></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-success">
-                    Save Result
-                </button>
+                <button type="submit" name="save_result" class="btn btn-success">
+    Save Result
+</button>
 
             </form>
+            <hr class="my-5">
+
+<h3 class="mb-3">All Results</h3>
+
+<table class="table table-bordered table-hover">
+
+    <thead class="table-dark">
+        <tr>
+            <th>#</th>
+            <th>Student</th>
+            <th>Course</th>
+            <th>Assignment</th>
+            <th>Obtained</th>
+            <th>Total</th>
+            <th>Grade</th>
+            <th>Remarks</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    <?php
+    $count = 1;
+    while($row = mysqli_fetch_assoc($showResults)){
+    ?>
+
+    <tr>
+
+        <td><?= $count++; ?></td>
+
+        <td><?= $row['full_name']; ?></td>
+
+        <td><?= $row['course_name']; ?></td>
+
+        <td><?= $row['title']; ?></td>
+
+        <td><?= $row['marks_obtained']; ?></td>
+
+        <td><?= $row['total_marks']; ?></td>
+
+        <td><?= $row['grade']; ?></td>
+
+        <td><?= $row['remarks']; ?></td>
+
+        <td>
+            <a href="edit_result.php?id=<?= $row['id']; ?>" class="btn btn-warning btn-sm">
+                Edit
+            </a>
+
+            <a href="delete_result.php?id=<?= $row['id']; ?>"
+               class="btn btn-danger btn-sm"
+               onclick="return confirm('Are you sure you want to delete this result?');">
+                Delete
+            </a>
+        </td>
+
+    </tr>
+
+    <?php } ?>
+
+    </tbody>
+
+</table>
 
         </div>
     </div>
