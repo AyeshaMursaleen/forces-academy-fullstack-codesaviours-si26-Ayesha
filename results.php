@@ -6,6 +6,8 @@ if(isset($_POST['save_result'])){
     $course_id = $_POST['course_id'];
     $assignment_id = $_POST['assignment_id'];
     $obtained_marks = $_POST['marks_obtained'];
+  echo "Obtained Marks = " . $obtained_marks;
+exit;
     $total_marks = $_POST['total_marks'];
     $grade = $_POST['grade'];
     $remarks = $_POST['remarks'];
